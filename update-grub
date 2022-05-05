@@ -1,9 +1,2 @@
 #!/bin/bash
-
-OUTPUT="$([ -d /sys/firmware/efi ] && echo UEFI || echo BIOS)"
-
-if [ "$OUTPUT" = "BIOS" ]; then
-   grub2-mkconfig -o /boot/grub2/grub.cfg
-else
-   grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-fi
+grub2-mkconfig -o /boot/grub2/grub.cfg
